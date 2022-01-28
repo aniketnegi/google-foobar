@@ -19,9 +19,9 @@ def solution(area):
         sq = int(area ** 0.5)
         squares.append(sq**2)
         area -= (sq**2)
-        
+
     print(','.join(map(str, squares)))
 
 
 if __name__ == '__main__':
-    solution(15324)
+    solution(int(input('Enter Init Area: ')))
