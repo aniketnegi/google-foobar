@@ -6,17 +6,14 @@ You're pretty sure it runs on diesel, not biofuel, but you can at least give the
 
 def solution(xs: list):
     import math
-    
     max_product = 1
-    
     xs = sorted([int(math.fabs(x)) for x in xs])[::-1]
-    
     for i in xs:
         if i in [1, 0]:
-            return max_product
+            print(str(max_product))
+            return
         else:
             max_product *= i
-    return (max_product)
+    print(str(max_product))
 
-
-solution([-2, -3, 4, -5])
+solution([0])
