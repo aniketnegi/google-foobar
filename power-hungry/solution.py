@@ -6,16 +6,15 @@ the subset: xs[0] = 2, xs[1] = -3, xs[4] = -5, giving the product 2*(-3)*(-5) = 
 '''
 def solution(xs):
     from collections import Counter
-    import math
     count = Counter(xs)
     max_output = 1
-    negatives = [x for x in xs if x < 0]
 
     for number in xs:
         if number != 0: max_output *= number
 
     if max_output < 0:
         if max(xs) != 0 and len(xs) > 1:
+            negatives = [x for x in xs if x < 0]
             max_output //= max(negatives)
         elif len(count) == 2:
             max_output = 0
